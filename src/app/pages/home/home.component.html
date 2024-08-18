@@ -1,0 +1,20 @@
+<div class="navbar">
+  <div class="logo">
+    <h1> <a routerLink="/home">Meeting App</a></h1>
+  </div>
+  <div class="profile-actions">
+    <a routerLink="/account" class="account-link">Profile</a>
+    <button class="logout-button" routerLink="/login">Logout</button>
+  </div>
+</div>
+<div class="meeting-cards-container">
+    <div *ngFor="let meeting of meetings" class="meeting-card">
+      <h3>{{ meeting.title }}</h3>
+      <p><strong>Başlangıç:</strong> {{ meeting.startDate | date:'short' }}</p>
+      <p><strong>Bitiş:</strong> {{ meeting.endDate | date:'short' }}</p>
+      <p><strong>Açıklama:</strong> {{ meeting.description }}</p>
+      <p><strong>Dokümanlar:</strong> {{ meeting.documents }}</p>
+      <p><strong>Oluşturan Kullanıcı ID:</strong> {{ meeting.userId }}</p>
+    </div>
+  </div>
+  
